@@ -1,0 +1,124 @@
+:root {
+  --bg: #071520;
+  --panel: rgba(9, 18, 26, 0.75);
+  --panel-border: rgba(143, 190, 255, 0.35);
+  --road: #1b2730;
+  --road-edge: #8b94a8;
+  --grass: #143d2d;
+  --lane: rgba(255,255,255,0.35);
+  --text: #eaf6ff;
+  --accent: #2de2a7;
+  --accent-2: #ffb703;
+  --danger: #ff5d73;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(72, 120, 170, 0.25), transparent 45%),
+    linear-gradient(180deg, #040b12 0%, #0a1722 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-shell {
+  width: min(92vw, 460px);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 10px;
+  background: rgba(15, 33, 47, 0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(180deg, #0b1920 0%, #173544 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.controls-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px 16px;
+  background: rgba(10, 21, 28, 0.85);
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent), #31c2ff);
+  color: #041018;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(45, 226, 167, 0.25);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(45, 226, 167, 0.34);
+}
+
+.keys {
+  font-size: 0.82rem;
+  color: rgba(234, 246, 255, 0.8);
+  text-align: right;
+}
+
+@media (max-width: 430px) {
+  .hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .controls-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .keys {
+    text-align: center;
+  }
+}
