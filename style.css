@@ -1,124 +1,134 @@
 :root {
-  --bg: #071520;
-  --panel: rgba(9, 18, 26, 0.75);
-  --panel-border: rgba(143, 190, 255, 0.35);
-  --road: #1b2730;
-  --road-edge: #8b94a8;
-  --grass: #143d2d;
-  --lane: rgba(255,255,255,0.35);
-  --text: #eaf6ff;
-  --accent: #2de2a7;
-  --accent-2: #ffb703;
-  --danger: #ff5d73;
-  --shadow: rgba(0, 0, 0, 0.4);
+  --bg-1: #050b11;
+  --bg-2: #0b1d28;
+  --panel: rgba(12, 20, 29, 0.8);
+  --panel-border: rgba(119, 187, 255, 0.42);
+  --road-1: #191f29;
+  --road-2: #2b3541;
+  --grass: #173b2f;
+  --grass-2: #0d271d;
+  --road-line: rgba(255, 255, 255, 0.9);
+  --text: #ebf8ff;
+  --accent: #53f2c4;
+  --accent-2: #7dd6ff;
+  --orange: #ffb34e;
+  --red: #ff6a6a;
+  --purple: #7a7dff;
+  --blue: #4ec9ff;
+  --shadow: rgba(0, 0, 0, 0.42);
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
+  width: 100%;
+  min-height: 100%;
   background:
-    radial-gradient(circle at top, rgba(72, 120, 170, 0.25), transparent 45%),
-    linear-gradient(180deg, #040b12 0%, #0a1722 100%);
+    radial-gradient(circle at top, rgba(95, 148, 255, 0.12), transparent 35%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.game-shell {
-  width: min(92vw, 460px);
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
+body {
+  display: grid;
+  place-items: center;
+  padding: 20px;
 }
 
-.hud {
+.game-wrap {
+  width: min(92vw, 460px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(7, 16, 22, 0.82);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.46);
+}
+
+.top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px 10px;
-  background: rgba(15, 33, 47, 0.9);
+  padding: 14px 18px 12px;
+  background: rgba(15, 27, 36, 0.96);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.brand {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.logo {
   color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1.12rem;
 }
 
-.stats {
+.scoreboard {
   display: flex;
-  gap: 16px;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  gap: 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(235, 248, 255, 0.8);
+}
+
+.scoreboard strong {
+  color: var(--text);
 }
 
 canvas {
   display: block;
   width: 100%;
   height: auto;
-  background: linear-gradient(180deg, #0b1920 0%, #173544 100%);
+  background: linear-gradient(180deg, #0f1e2a 0%, #1a2d39 100%);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.controls-panel {
+.bottom-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 12px 16px 16px;
-  background: rgba(10, 21, 28, 0.85);
+  gap: 12px;
+  padding: 14px 16px 18px;
+  background: rgba(13, 24, 31, 0.92);
 }
 
 button {
   appearance: none;
   border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #041a20;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border-radius: 10px;
   padding: 10px 18px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, var(--accent), #31c2ff);
-  color: #041018;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(45, 226, 167, 0.25);
-  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 12px 22px rgba(83, 242, 196, 0.22);
 }
 
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 22px rgba(45, 226, 167, 0.34);
+  box-shadow: 0 14px 26px rgba(83, 242, 196, 0.3);
 }
 
-.keys {
-  font-size: 0.82rem;
-  color: rgba(234, 246, 255, 0.8);
+.hint {
+  color: rgba(235, 248, 255, 0.78);
+  font-size: 0.8rem;
   text-align: right;
 }
 
 @media (max-width: 430px) {
-  .hud {
+  .top-bar,
+  .bottom-panel {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
   }
 
-  .controls-panel {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .keys {
-    text-align: center;
+  .hint {
+    text-align: left;
   }
 }
