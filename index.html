@@ -3,24 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BB Racing</title>
+    <title>MouseBot Racing</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="game-wrap">
-      <div class="top-bar">
-        <div class="logo">BB RACING</div>
-        <div class="scoreboard">
-          <span>Score <strong id="score">0</strong></span>
-          <span>Best <strong id="best">0</strong></span>
+    <div class="scene">
+      <div class="hud">
+        <div class="back-pill">
+          <span class="arrow">◀</span>
+          <span class="label">Back</span>
+        </div>
+
+        <div class="badge-row">
+          <div class="badge bronze">
+            <span class="badge-icon">🏆</span>
+            <span class="badge-text">25/48</span>
+          </div>
+          <div class="badge green">
+            <span class="badge-icon">▣</span>
+            <span class="badge-text">65%</span>
+          </div>
+          <div class="badge blue">
+            <span class="badge-icon">🎁</span>
+            <span class="badge-text">73,765</span>
+          </div>
+          <div class="badge purple">
+            <span class="badge-icon">💎</span>
+            <span class="badge-text">80</span>
+          </div>
+          <div class="badge gold">
+            <span class="badge-icon">★</span>
+            <span class="badge-text">6</span>
+          </div>
         </div>
       </div>
 
-      <canvas id="gameCanvas" width="420" height="720" aria-label="BB Racing arcade game"></canvas>
+      <div class="island-scene">
+        <div class="boat"></div>
+        <div class="daily daily-left">
+          <div class="daily-ring">
+            <div class="daily-inner">NEW</div>
+          </div>
+          <div class="daily-label">Daily Reward!</div>
+        </div>
 
-      <div class="bottom-panel">
-        <button id="startBtn">Start Race</button>
-        <span class="hint">Steer with A / D or ← / →</span>
+        <div class="sign sign-left">
+          <div class="sign-top">MouseBot</div>
+          <div class="sign-sub">Escape From CatLab</div>
+          <div class="car-art">
+            <div class="car-body">
+              <div class="car-window"></div>
+              <div class="wheel wheel-left"></div>
+              <div class="wheel wheel-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-card">
+          <div class="note-title">Pro Tip</div>
+          <p>Upgrade your car's <br />handling to improve <br />its turning and grip.</p>
+        </div>
+
+        <div class="daily daily-right">
+          <div class="daily-ring">
+            <div class="daily-inner">NEW</div>
+          </div>
+          <div class="daily-label">Daily Challenge!</div>
+        </div>
+      </div>
+
+      <div class="bottom-menu">
+        <div class="menu-item">
+          <div class="menu-icon control-icon">
+            <div class="controller"></div>
+          </div>
+          <div class="menu-text">Split Screen</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-icon wheel-icon">
+            <div class="wheel-outer"></div>
+          </div>
+          <div class="menu-text">Quick Race</div>
+        </div>
+
+        <div class="menu-item active">
+          <div class="menu-icon flag-icon">
+            <div class="flag-1"></div>
+            <div class="flag-2"></div>
+          </div>
+          <div class="menu-text">Championships</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-icon career-icon">
+            <div class="chequered"></div>
+          </div>
+          <div class="menu-text">Career</div>
+        </div>
       </div>
     </div>
 
